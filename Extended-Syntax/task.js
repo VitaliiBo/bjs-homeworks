@@ -13,6 +13,18 @@ function calculateQuadraticEquation(){
 function getResult(a,b,c){
     // код для задачи №1 писать здесь
     //return x;
+    "use strict"
+    let x = [];
+    let discr = Math.pow(b , 2) - 4 * a * c;
+    console.log(discr);
+    if (discr > 0) {
+      x.push((-b+(Math.sqrt(discr)))/2*a);
+      x.push((-b-(Math.sqrt(discr)))/2*a);
+    } else if (discr === 0 ) {
+      x.push(-b/(2*a));
+    }
+
+    return x;
 }
 
 function calculateAverageRating(){
