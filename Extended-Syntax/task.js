@@ -36,6 +36,18 @@ function calculateAverageRating(){
 function getAverageMark(marks){
     // код для задачи №2 писать здесь
     //return averageMark;
+    let marksArr = marks;
+    let marksSumm = 0 ;
+    if (marksArr.length > 5) {
+      marksArr = marksArr.slice(0, 5);
+      console.log('Внимание! Кол-во оченок больше 5.');
+      alert('Внимание! Кол-во оченок больше 5.');
+    }
+    for (var i = 0; i < marksArr.length; i++) {
+      marksSumm = marksSumm + marksArr[i];
+    }
+    avrgMark = marksSumm / marksArr.length;
+    return avrgMark;
 }
 
 function calculateDrinkTask(){
