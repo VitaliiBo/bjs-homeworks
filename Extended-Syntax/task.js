@@ -1,4 +1,4 @@
-
+"use strict"
 
 function calculateQuadraticEquation(){
     let a = +window.a.value;
@@ -11,12 +11,10 @@ function calculateQuadraticEquation(){
 }
 
 function getResult(a,b,c){
-    // код для задачи №1 писать здесь
-    //return x;
-    "use strict"
+
+
     let x = [];
     let discr = Math.pow(b , 2) - 4 * a * c;
-    console.log(discr);
     if (discr > 0) {
       x.push((-b+(Math.sqrt(discr)))/2*a);
       x.push((-b-(Math.sqrt(discr)))/2*a);
@@ -34,19 +32,17 @@ function calculateAverageRating(){
 }
 
 function getAverageMark(marks){
-    // код для задачи №2 писать здесь
-    //return averageMark;
+
     let marksArr = marks;
     let marksSumm = 0 ;
     if (marksArr.length > 5) {
       marksArr = marksArr.slice(0, 5);
       console.log('Внимание! Кол-во оченок больше 5.');
-      alert('Внимание! Кол-во оченок больше 5.');
     }
-    for (var i = 0; i < marksArr.length; i++) {
-      marksSumm = marksSumm + marksArr[i];
+    for (let i = 0; i < marksArr.length; i++) {
+      marksSumm += marksArr[i];
     }
-    avrgMark = marksSumm / marksArr.length;
+    let avrgMark = marksSumm / marksArr.length;
     return avrgMark;
 }
 
@@ -58,9 +54,7 @@ function calculateDrinkTask(){
 }
 
 function askDrink(name,dateOfBirthday){
-    // код для задачи №3 писать здесь
-    //console.log(result)
-    //return result;
+
     let currentDate = new Date().getFullYear();
     let userBirthYear = dateOfBirthday.getFullYear();
     let age = currentDate - userBirthYear;
