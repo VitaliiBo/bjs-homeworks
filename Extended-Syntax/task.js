@@ -11,8 +11,6 @@ function calculateQuadraticEquation(){
 }
 
 function getResult(a,b,c){
-
-
     let x = [];
     let discr = Math.pow(b , 2) - 4 * a * c;
     if (discr > 0) {
@@ -21,7 +19,6 @@ function getResult(a,b,c){
     } else if (discr === 0 ) {
       x.push(-b/(2*a));
     }
-
     return x;
 }
 
@@ -32,7 +29,6 @@ function calculateAverageRating(){
 }
 
 function getAverageMark(marks){
-
     let marksArr = marks;
     let marksSumm = 0 ;
     if (marksArr.length > 5) {
@@ -42,8 +38,7 @@ function getAverageMark(marks){
     for (let i = 0; i < marksArr.length; i++) {
       marksSumm += marksArr[i];
     }
-    let avrgMark = marksSumm / marksArr.length;
-    return avrgMark;
+    return  marksSumm / marksArr.length;
 }
 
 function calculateDrinkTask(){
@@ -54,13 +49,12 @@ function calculateDrinkTask(){
 }
 
 function askDrink(name,dateOfBirthday){
-
     let currentDate = new Date().getFullYear();
     let userBirthYear = dateOfBirthday.getFullYear();
     let age = currentDate - userBirthYear;
     if (age >= 18) {
-      alert('Не желаете ли олд-фэшн, ' + name + '?');
+      return 'Не желаете ли олд-фэшн, ' + name + '?';
     } else {
-      alert('Сожалею, ' + name + ', но я не могу вам продать алкоголь. Зато могу предложить вам замечательный клюквенный компот!')
+      return 'Сожалею, ' + name + ', но я не могу вам продать алкоголь. Зато могу предложить вам замечательный клюквенный компот!';
     }
 }
