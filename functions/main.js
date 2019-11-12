@@ -14,7 +14,6 @@ function getSolutions( a = 1 , b = 1 , c ) {
     return { roots: [`${x1}`,`${x2}`], D: D };
   }
 }
-
 function showSolutionMessage( a , b , c ) {
   let result = getSolutions( a , b , c );
   console.log(`Вычисляем корни квадратного уравнения ${a}x² + ${b}x + ${c}`);
@@ -27,11 +26,9 @@ function showSolutionMessage( a , b , c ) {
     console.log(`Уравнение имеет два корня. X₁ = ${result.roots[0]}, X₂ = ${result.roots[1]}`);
   }
 }
-
 showSolutionMessage( 1 , 2 , 3);
 showSolutionMessage( 7 , 20 , -3);
 showSolutionMessage( 2 , 4 , 2);
-
 /******************
 ****Задание 2******
 ******************/
@@ -44,7 +41,6 @@ function getAverageScore( data ) {
   data.average = getArrAvrg( average );
   return data;
 }
-
 function getArrAvrg( arr ) {
   let summ = 0;
   for (let i = 0; i < arr.length; i++) {
@@ -52,7 +48,6 @@ function getArrAvrg( arr ) {
   }
   return summ / arr.length;
 }
-
 console.log( getAverageScore({
   algebra: [ 2, 4, 5, 2, 3, 4 ],
   geometry: [ 2, 4, 5 ],
@@ -64,7 +59,6 @@ console.log( getAverageScore({
   chemistry: [ 2 ],
   french: [ 4, 4 ]
 }));
-
 /******************
 ****Задание 3******
 ******************/
@@ -77,7 +71,6 @@ function getPersonData( secretData ) {
     lastName: secretData.bbb
   };
 }
-
 function getName( number ) {
   if ( number === 1 ) {
     return "Родриго"
@@ -85,8 +78,19 @@ function getName( number ) {
     return "Эмильо";
   }
 }
-
 console.log( getPersonData({
   aaa: 0,
   bbb: 0
+}));
+console.log( getPersonData({
+  aaa: 1,
+  bbb: 0
+}));
+console.log( getPersonData({
+  aaa: 1,
+  bbb: 1
+}));
+console.log( getPersonData({
+  aaa: 0,
+  bbb: 1
 }));
