@@ -66,5 +66,27 @@ console.log( getAverageScore({
 }));
 
 /******************
-****Задание 2******
+****Задание 3******
 ******************/
+function getPersonData( secretData ) {
+  for (let prop in secretData) {
+    secretData[prop] = getName(secretData[prop]);
+  }
+  return {
+    firstName: secretData.aaa,
+    lastName: secretData.bbb
+  };
+}
+
+function getName( number ) {
+  if ( number === 1 ) {
+    return "Родриго"
+  } else if ( number === 0 ) {
+    return "Эмильо";
+  }
+}
+
+console.log( getPersonData({
+  aaa: 0,
+  bbb: 0
+}));
