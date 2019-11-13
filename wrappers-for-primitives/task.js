@@ -54,6 +54,4 @@ function getGreeting(name) {
   let greeting = `Привет, Мир! Меня зовут ${noName}.`;
   console.log(greeting);
   return greeting;
-    // код для задачи №2 писать здесь
-    //return greeting;
 }
