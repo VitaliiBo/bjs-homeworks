@@ -3,11 +3,17 @@ function initCheckBirthday() {
 
     const result = checkBirthday(birthday) ? "Да" : "Нет";
 
-    document.getElementById('disclaimer').innerHTML = result;   
+    document.getElementById('disclaimer').innerHTML = result;
 }
 
 function checkBirthday(birthday) {
-    // код для задачи №1 писать здесь
+  let now = Date.now();
+  let bDay = new Date(birthday);
+  if ( now - bDay >= 567993600000) { // 567993600000 = 18 лет в милисекундах. В подсчете весокосных лет нет необходимости.
+    return true;
+  } else {
+    return false;
+  }
 }
 
 function initPrintAnimalSound() {
@@ -17,11 +23,17 @@ function initPrintAnimalSound() {
 
     const result = getAnimalSound(animal);
 
-    document.getElementById('sound').innerHTML = result;   
+    document.getElementById('sound').innerHTML = result;
 }
 
 function getAnimalSound(animal) {
-    // код для задачи №2 писать здесь
+    if ( animal == 'undefined') {
+      return null;
+    }
+    let sound = animal.sound;
+    if (animal != 'undefined') {
+      return sound;
+    }
 }
 
 function initCalculateStatement() {
@@ -35,5 +47,10 @@ function initCalculateStatement() {
 }
 
 function getAverageMark(marks) {
-    // код для задачи №3 писать здесь
+    let avrg = null;
+    for (let i = 0; i < marks.length; i++) {
+      avrg += parseInt(marks[i]);
+    }
+    avrg = avrg / marks.length;
+    return Math.round(avrg);
 }
