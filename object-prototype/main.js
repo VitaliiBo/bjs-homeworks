@@ -9,7 +9,7 @@ function initCheckBirthday() {
 function checkBirthday(birthday) {
   let now = Date.now();
   let bDay = new Date(birthday);
-  if ( now - bDay >= 567993600000) { // 567993600000 = 18 лет в милисекундах. В подсчете весокосных лет нет необходимости.
+  if ( now - bDay >= 567993600000) { // 567993600000 = 18 лет в милисекундах. В подсчете високосных лет нет необходимости.
     return true;
   } else {
     return false;
