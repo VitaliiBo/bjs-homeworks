@@ -7,9 +7,11 @@ function initCheckBirthday() {
 }
 
 function checkBirthday(birthday) {
-  let now = Date.now();
+  const now = new Date();
   let bDay = new Date(birthday);
-  if ( now - bDay >= 567993600000) { // 567993600000 = 18 лет в милисекундах. В подсчете високосных лет нет необходимости.
+  let present = new Date();
+  let majority = now.getTime() - present.setFullYear(present.getFullYear() - 18);
+  if ( now - bDay >= majority) {
     return true;
   } else {
     return false;
