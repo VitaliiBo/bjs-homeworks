@@ -125,26 +125,19 @@ class StudentLog {
       return summ / this.subjects[subject].length
     } else { return 0; }
   }
-
   getTotalAverage() {
     let summ = 0;
     let quantity = 0;
     for (let key in this.subjects) {
       quantity += this.subjects[key].length;
-      console.log(quantity + ' quantity');
       for (let i = 0; i < this.subjects[key].length; i++) {
         summ += this.subjects[key][i];
-        console.log(summ + ' summ');
       }
-
     }
-    console.log(summ + ' ' + quantity);
-    if (isNaN(summ / quantity)) {
+    if ( isNaN( summ / quantity )) {
       return 0;
     } else {
       return summ / quantity;
       }
-
   }
-
 }
