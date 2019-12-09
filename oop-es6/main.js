@@ -92,30 +92,59 @@ class StormStaff extends Weapon {
 /************************
 *******Задание 3*********
 ************************/
-
-
 class StudentLog {
   constructor(name) {
     this.name = name;
     this.subjects = {};
   }
-
-  getName(){
+  getName() {
     return this.name;
   }
-
-  addGrade(grade, subject){
+  addGrade(grade, subject) {
     if (grade > 0 && grade <= 5 ) {
       if (subject in this.subjects) {
         this.subjects[subject].push(grade);
-      } else { this.subjects = {[subject]:[grade]};
-    }
+      } else {
+          this.subjects[subject] = [];
+          this.subjects[subject].push(grade);
+        }
     } else {
         console.log(`Вы пытались поставить оценку "${grade}", принимаются только оценки от 1 до 5`);
         if (!(subject in this.subjects)) {
           this.subjects = {[subject]:[]}
-        }
+      }
     }
     return this.subjects[subject].length;
   }
+  getAverageBySubject(subject) {
+    if (subject in this.subjects) {
+      let summ = 0;
+      for (let i = 0; i < this.subjects[subject].length; i++) {
+        summ += this.subjects[subject][i];
+      }
+      return summ / this.subjects[subject].length
+    } else { return 0; }
+  }
+
+  getTotalAverage() {
+    let summ = 0;
+    let quantity = 0;
+    for (let key in this.subjects) {
+      quantity += this.subjects[key].length;
+      console.log(quantity + ' quantity');
+      for (let i = 0; i < this.subjects[key].length; i++) {
+        summ += this.subjects[key][i];
+        console.log(summ + ' summ');
+      }
+
+    }
+    console.log(summ + ' ' + quantity);
+    if (isNaN(summ / quantity)) {
+      return 0;
+    } else {
+      return summ / quantity;
+      }
+
+  }
+
 }
