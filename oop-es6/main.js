@@ -74,19 +74,28 @@ class Fist extends Weapon {
     super('Рука', 1, Infinity, 1);
   }
 }
-class LongBow extends Weapon {
-  constructor(name, attack, durability, range) {
-    super('Длинный лук', 15, 200, 4);
+class LongBow extends Bow {
+  constructor() {
+    super();
+    this.name = 'Длинный лук';
+    this.attack = 15;
+    this.range = 4;
   }
 }
-class Axe extends Weapon {
-  constructor(name, attack, durability, range) {
-    super('Секира', 27, 800, 1);
+class Axe extends Sword {
+  constructor() {
+    super();
+    this.name = 'Секира';
+    this.attack = 27;
+    this.durability = 800;
   }
 }
-class StormStaff extends Weapon {
-  constructor(name, attack, durability, range) {
-    super('Посох Бури', 10, 300, 3);
+class StormStaff extends Staff {
+  constructor() {
+    super();
+    this.name = 'Посох Бури';
+    this.attack = 10;
+    this.range = 3;
   }
 }
 /************************
